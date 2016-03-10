@@ -1,7 +1,7 @@
 <?php
 
 include $_SERVER['DOCUMENT_ROOT'] . 
-'novice_to_ninja/shopping-cart-sessions/includes/magicquotes.inc.php';
+'shopping-cart-sessions/includes/magicquotes.inc.php';
 
 //makeshift database for testing
 $items = array(
@@ -41,7 +41,7 @@ if(isset($_GET['cart']))
 	{
 		foreach($items as $product)
 		{
-			if($product['id'] == $id)
+			if($product['id'] == $id) 
 			{
 				$cart[] = $product;
 				$total += $product['price'];
@@ -55,6 +55,8 @@ if(isset($_GET['cart']))
 	
 }
 
+
+//user clicks button to empty their cart
 if(isset($_POST['action']) and $_POST['action'] == 'Empty cart')
 {
 	unset($_SESSION['cart']);
