@@ -13,10 +13,46 @@ $items = array(
         'price'=>39.95)
 	);
 
+
+
 session_start();
 if(!isset($_SESSION['cart']))
 {
 	$_SESSION['cart'] = array();
 }
+
+
+
+if(isset($_POST['action']) and $_POST['action'] == "Buy")
+{
+	$_SESSION['cart'] = $_POST['id'];
+	header('Location: .');
+	exit();
+}
+
+
+if(isset($_GET['cart']))
+{
+	$cart = array();
+	$total = 0;
+
+	foreach($_SESSION['cart'] as $id)
+	{
+		foreach($items as $product)
+		{
+			if($product['id'] == $id)
+			{
+				$cart[] = $product;
+				$total += $product['$price'];
+				break;
+			}
+		}
+	}
+
+	include 'cart.html.php';
+	exit();
+	
+}
+
 
 include 'catalog.html.php';
