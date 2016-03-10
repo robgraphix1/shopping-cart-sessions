@@ -33,7 +33,7 @@
           <?php endforeach; ?>
         </tbody>
         <tfoot>
-          <tr>+
+          <tr>
             <td>Total:</td>
             <td><?php echo number_format($total, 2); ?></td>
           </tr>
@@ -42,7 +42,7 @@
     <?php else: ?>
     <p>You're cart is empty<p>
     <?php endif; ?>
-    <form>
+    <form action="?" method="post">
       <p><a href="?">Continue Shopping</a> 
         <?php if(count($_SESSION['cart']) > 0): ?>
           or
