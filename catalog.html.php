@@ -17,5 +17,15 @@
   <body>
     <p>Your shopping cart contains <?php 
       echo count($_SESSION['cart']); ?> items.</p>
+      <table border="1">
+      <thead>
+        <tr>
+          <th>Item Description</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+      </table>
 
  
