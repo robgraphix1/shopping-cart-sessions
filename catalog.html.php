@@ -27,5 +27,6 @@
       <tbody>
       </tbody>
       </table>
+      <?php foreach($items as $item): ?>
 
  
