@@ -46,7 +46,7 @@
       <p><a href="?">Continue Shopping</a> 
         <?php if(count($_SESSION['cart']) > 0): ?>
           or
-          <input type="submit" name="action" value="Empty cart">
+          <input type="submit" name="action" value="empty cart">
         <?php endif; ?>
       <p>
     </form>
