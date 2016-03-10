@@ -1,5 +1,5 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'] .
-    'novice_to_ninja/shopping-cart-sessions/includes/magicquotes.inc.php'; ?>
+    'novice_to_ninja/shopping-cart-sessions/includes/helpers.inc.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,16 +17,32 @@
   <body>
     <p>Your shopping cart contains <?php 
       echo count($_SESSION['cart']); ?> items.</p>
+    <p><a href="?cart">View your cart</a></p>
       <table border="1">
-      <thead>
-        <tr>
-          <th>Item Description</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
+        <thead>
+          <tr>
+            <th>Item Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach($items as $item): ?>
+            <tr>
+              <td><?php htmlout($item['desc']); ?></td>
+              <td><?php echo number_format($item['price'], 2); ?></td>
+              <td>
+                <form action="" method="post">
+                  <div>
+                    <input type="hidden" name="id" value="<?php htmlout($item['id']);?>">
+                    <input type="submit" name="action" value="Buy">
+                  </div>
+                </form>
+              </td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
       </table>
-      <?php foreach($items as $item): ?>
+    </body> 
+  </html> 
 
  

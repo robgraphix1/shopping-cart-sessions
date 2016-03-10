@@ -9,7 +9,7 @@ $items = array(
         'price'=>1000),
     array('id'=> '3', 'desc'=>'Songs of the Goldfish (2CD set)',
         'price'=>19.99),
-    array('id'=> '4', 'desc'=>'Simply JavaScript (SitePoint)',
+    array('id'=> '4', 'desc'=>'Simply JavaScript',
         'price'=>39.95)
 	);
 
