@@ -3,6 +3,8 @@
 include $_SERVER['DOCUMENT_ROOT'] . 
 'novice_to_ninja/shopping-cart-sessions/includes/magicquotes.inc.php';
 
+
+//makeshift database
 $items = array(
 	array('id'=>'1', 'desc'=>'Canadian-Australian Dictionary', 'price'=>24.95),
  	array('id'=> '2', 'desc'=>'As-new parachute (never opened)',
@@ -14,7 +16,7 @@ $items = array(
 	);
 
 
-
+//initiate the session and empty cart
 session_start();
 if(!isset($_SESSION['cart']))
 {
@@ -22,15 +24,15 @@ if(!isset($_SESSION['cart']))
 }
 
 
-
+//if user chooses to buy an item, populate cart array with item id
 if(isset($_POST['action']) and $_POST['action'] == "Buy")
 {
-	$_SESSION['cart'] = $_POST['id'];
+	$_SESSION['cart'][] = $_POST['id'];
 	header('Location: .');
 	exit();
 }
 
-
+// if user chooses to view their cart
 if(isset($_GET['cart']))
 {
 	$cart = array();
@@ -54,5 +56,5 @@ if(isset($_GET['cart']))
 	
 }
 
-
+//default state
 include 'catalog.html.php';
