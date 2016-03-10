@@ -1,7 +1,7 @@
 <?php
 
 include $_SERVER['DOCUMENT_ROOT'] . 
-'novice_to_ninja/shoppingcart/includes/magicquotes.php';
+'novice_to_ninja/shopping-cart-sessions/includes/magicquotes.inc.php';
 
 $items = array(
 	array('id'=>'1', 'desc'=>'Canadian-Australian Dictionary', 'price'=>24.95),
